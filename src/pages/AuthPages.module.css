@@ -1,0 +1,53 @@
+.page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--paper-warm);
+}
+.card {
+  background: white;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-md);
+}
+.logoWrap { margin-bottom: 1.5rem; }
+.logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+.heading { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.35rem; }
+.sub { font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 2rem; }
+
+.form { display: flex; flex-direction: column; gap: 1.25rem; }
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.label { font-size: 0.85rem; font-weight: 500; color: var(--ink); }
+.input {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--ink);
+  transition: border-color var(--ease);
+  outline: none;
+  background: var(--paper);
+}
+.input:focus { border-color: var(--ink-muted); background: white; }
+.input::placeholder { color: var(--ink-muted); opacity: 0.6; }
+
+.submitBtn {
+  padding: 0.85rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: opacity var(--ease);
+  margin-top: 0.25rem;
+}
+.submitBtn:hover:not(:disabled) { opacity: 0.85; }
+.submitBtn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.switchText { text-align: center; font-size: 0.875rem; color: var(--ink-muted); margin-top: 1.5rem; }
+.switchLink { color: var(--accent); font-weight: 500; }

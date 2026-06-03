@@ -1,0 +1,176 @@
+.page { padding: 2rem 0 4rem; }
+.title { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Sidebar */
+.sidebar { display: flex; flex-direction: column; gap: 1rem; position: sticky; top: 80px; }
+
+.profileCard {
+  background: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: var(--paper);
+}
+.avatar {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+}
+.userName { font-size: 1.2rem; font-weight: 600; color: var(--paper); margin-bottom: 0.25rem; }
+.userEmail { font-size: 0.85rem; color: rgba(250,249,246,0.6); margin-bottom: 0.75rem; }
+.roleBadge {
+  display: inline-block;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  color: rgba(250,249,246,0.8);
+}
+
+.statsCard {
+  background: white;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.stat { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.statValue { font-size: 1.25rem; font-weight: 700; font-family: var(--font-display); color: var(--ink); }
+.statLabel { font-size: 0.75rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.statDivider { width: 1px; height: 36px; background: var(--cream); }
+
+.editCard {
+  background: white;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+.editHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.editTitle { font-size: 0.95rem; font-weight: 600; }
+.editBtn {
+  font-size: 0.82rem;
+  color: var(--accent);
+  padding: 3px 10px;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-md);
+  transition: background var(--ease);
+}
+.editBtn:hover { background: var(--cream); }
+
+.profileInfo { display: flex; flex-direction: column; gap: 0; }
+.infoRow { display: flex; flex-direction: column; gap: 2px; padding: 0.6rem 0; border-bottom: 1px solid var(--cream); }
+.infoRow:last-child { border-bottom: none; }
+.infoLabel { font-size: 0.75rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.infoValue { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+
+.editForm { display: flex; flex-direction: column; gap: 0.85rem; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.label { font-size: 0.8rem; font-weight: 500; color: var(--ink); }
+.input {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--ease);
+}
+.input:focus { border-color: var(--ink-muted); }
+.input[readonly] { opacity: 0.6; cursor: default; }
+.formActions { display: flex; gap: 0.5rem; }
+.cancelBtn {
+  flex: 1; padding: 0.6rem;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  transition: background var(--ease);
+}
+.cancelBtn:hover { background: var(--cream); }
+.saveBtn {
+  flex: 1; padding: 0.6rem;
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: opacity var(--ease);
+}
+.saveBtn:hover:not(:disabled) { opacity: 0.85; }
+.saveBtn:disabled { opacity: 0.55; }
+
+/* Main library */
+.main {}
+.libraryTitle { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+.librarySub { font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 1.5rem; }
+.loading { color: var(--ink-muted); }
+.emptyLibrary { text-align: center; padding: 3rem; color: var(--ink-muted); display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+.browseBtn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.orderList { display: flex; flex-direction: column; gap: 1rem; }
+.orderCard {
+  background: white;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+.orderHeader { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+.orderId { font-weight: 600; font-size: 0.9rem; }
+.orderDate { font-size: 0.8rem; color: var(--ink-muted); margin-top: 2px; }
+.orderMeta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.orderTotal { font-size: 1rem; font-weight: 700; }
+.orderStatus { font-size: 0.78rem; font-weight: 600; padding: 2px 8px; border-radius: var(--radius-sm); text-transform: capitalize; }
+
+.bookList { display: flex; flex-direction: column; gap: 0.5rem; }
+.bookRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.75rem;
+  background: var(--paper-warm);
+  border-radius: var(--radius-md);
+  gap: 1rem;
+}
+.bookInfo { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.bookTitle { font-size: 0.9rem; font-weight: 500; }
+.bookAuthor { font-size: 0.8rem; color: var(--ink-muted); }
+.formatBadge { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; color: var(--accent); letter-spacing: 0.05em; margin-top: 2px; }
+.bookActions { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+.bookPrice { font-size: 0.85rem; font-weight: 500; }
+.downloadBtn {
+  padding: 0.3rem 0.8rem;
+  background: var(--success);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  font-weight: 500;
+  transition: opacity var(--ease);
+}
+.downloadBtn:hover { opacity: 0.85; }
+.noDownload { font-size: 0.75rem; color: var(--ink-muted); font-style: italic; }
+
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}

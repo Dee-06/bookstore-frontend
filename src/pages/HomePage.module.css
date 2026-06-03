@@ -1,0 +1,191 @@
+.page { min-height: 100vh; }
+
+/* Hero */
+.hero {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 5rem 0 4rem;
+  overflow: hidden;
+}
+.heroInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.heroEyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--paper);
+  margin-bottom: 1.25rem;
+}
+.heroTitle em {
+  font-style: italic;
+  color: var(--accent-light);
+}
+.heroSub {
+  font-size: 1.05rem;
+  color: rgba(250, 249, 246, 0.65);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 420px;
+}
+.searchForm {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 480px;
+}
+.searchInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-md);
+  color: var(--paper);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--ease);
+}
+.searchInput::placeholder { color: rgba(255,255,255,0.4); }
+.searchInput:focus { border-color: rgba(255,255,255,0.5); }
+.searchBtn {
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background var(--ease);
+}
+.searchBtn:hover { background: var(--accent-dark); }
+
+/* Book stack decoration */
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.bookStack {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+.bookSpine {
+  width: 52px;
+  border-radius: 4px 2px 2px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.05em;
+  padding: 12px 8px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Sections */
+.section { padding: 4rem 1.5rem; }
+.sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.75rem;
+}
+.viewAll {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 500;
+  transition: opacity var(--ease);
+}
+.viewAll:hover { opacity: 0.75; }
+
+/* Categories */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.5rem 1rem;
+  background: white;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: transform var(--ease), box-shadow var(--ease);
+}
+.categoryCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.catIcon { font-size: 1.75rem; }
+.catLabel { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+
+/* Books grid */
+.booksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1.5rem;
+}
+
+.skeleton {
+  height: 340px;
+  background: linear-gradient(90deg, var(--cream) 25%, var(--paper-warm) 50%, var(--cream) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-lg);
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.empty { color: var(--ink-muted); text-align: center; padding: 2rem; }
+
+/* CTA */
+.cta {
+  background: var(--paper-warm);
+  border-top: 1px solid var(--cream);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.cta h2 { font-size: 2rem; margin-bottom: 0.75rem; }
+.cta p { color: var(--ink-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
+.ctaBtn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: opacity var(--ease);
+}
+.ctaBtn:hover { opacity: 0.85; }
+
+@media (max-width: 768px) {
+  .heroInner { grid-template-columns: 1fr; }
+  .heroVisual { display: none; }
+}

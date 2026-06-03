@@ -1,0 +1,145 @@
+.page { padding: 2rem 0 4rem; }
+.title { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+.layout { display: grid; grid-template-columns: 1fr 360px; gap: 2.5rem; align-items: start; }
+.sectionTitle { font-size: 1.15rem; font-weight: 600; margin-bottom: 1.25rem; }
+
+.formSection {
+  background: white;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.ebookNote {
+  background: var(--paper-warm);
+  border: 1px solid var(--cream);
+  border-left: 3px solid var(--success);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  font-size: 0.875rem;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Account card */
+.accountCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--ink);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.25rem;
+}
+.accountAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.accountDetails { flex: 1; min-width: 0; }
+.accountName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--paper);
+  margin-bottom: 2px;
+}
+.accountEmail {
+  font-size: 0.85rem;
+  color: rgba(250, 249, 246, 0.6);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Info boxes */
+.infoBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.infoBoxRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--cream);
+  transition: background var(--ease);
+}
+.infoBoxRow:last-child { border-bottom: none; }
+.infoBoxRow:hover { background: var(--paper-warm); }
+.infoBoxIcon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.infoBoxLabel { font-size: 0.78rem; color: var(--ink-muted); margin-bottom: 2px; }
+.infoBoxValue { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+
+/* Order summary */
+.summary {
+  background: white;
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.itemList { display: flex; flex-direction: column; gap: 0.6rem; }
+.orderItem { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+.itemDetails { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.itemName { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+.itemFormat {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+.itemAmt { font-size: 0.9rem; font-weight: 500; white-space: nowrap; }
+
+.divider { border: none; border-top: 1px solid var(--cream); margin: 0.25rem 0; }
+.totalRow { display: flex; justify-content: space-between; font-size: 1.05rem; font-weight: 600; }
+
+.paystackNote {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  padding: 0.75rem;
+  background: var(--paper-warm);
+  border-radius: var(--radius-md);
+  justify-content: center;
+}
+
+.payBtn {
+  padding: 0.95rem;
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background var(--ease);
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+.payBtn:hover:not(:disabled) { background: var(--accent-dark); }
+.payBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .summary { position: static; }
+}
